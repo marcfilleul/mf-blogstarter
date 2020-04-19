@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" class="{{ classes.html }}">
+
+  <head>
+    {% include "components/head.njk" %}
+
+    {% if env == 'production' %}
+      {# capture the CSS content as a Nunjucks variable #}
+      {% set css %}{% include "css/style.min.css" %}{% endset %}
+      <style> 
+        {{ css | safe }}
+      </style>
+    {% else %}
+    <link rel="stylesheet" href="/assets/style.css">
+    {% endif %}
+  </head>
+
+  <body class="{{ classes.body }}">
+ 
+    {% include "components/header.njk" %}
+    
+    <main id="main-content" style="scroll-margin-top: 5rem;" class="{{ classes.main }}">
+        {{ content | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+
+    {# Add DarkMode script if set to true in site data #}
+    {% if site.allowDarkMode %}
+    {% set js %}
+    {% include "js/darkmode.js" %}
+    {% endset %}
+    <script>{{ js | jsmin | safe }}</script>
+    {% endif %}
+    
+  </body>
+
+</html>

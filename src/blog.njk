@@ -1,0 +1,28 @@
+---
+layout: default
+title: Blog
+description: "Awesome blog posts"
+---
+
+<section class="my-auto">
+  <div class="mx-auto flow">
+    <h1>{{ title }}</h1>
+    <p class="font-semibold">
+      Here are your wonderful posts...
+    </p>
+    <ul>
+      {%- for item in collections.post | reverse -%}
+      <li class="mt-6">
+        <time value="{{ item.date }}" class="text-sm text-gray-500">{{ item.date | readableDate }}</time>
+        <h3 class="mt-1 font-semibold"><a class="text-primary" href="{{ item.url }}">{{ item.data.title }}</a>
+        </h3>
+        <div class="mt-2">
+          {% if item.data.teaser %}
+          {{ item.data.teaser }}
+          {% endif %}
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

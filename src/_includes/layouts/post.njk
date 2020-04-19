@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<section>
+
+  <article class="mx-auto measure markdown">
+    <time value="{{ date }}" class="text-sm text-gray-600">Last updated: {{ date | readableDate }}</time>
+    <h1 class="mt-6">{{ title }}</h1>
+    <div class="mt-6 text-lg font-medium flow">
+      {{ teaser | safe }}
+    </div>
+    <div class="mt-6 flow">
+      {{ content | safe }}
+    </div>
+  </article>
+
+  <nav class="mx-auto mt-16 measure"><a href="{{ '/blog/' | url }}">← Blog index</a></nav>
+
+</section>

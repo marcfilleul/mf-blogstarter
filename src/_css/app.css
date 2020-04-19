@@ -1,0 +1,352 @@
+/* Tailwind base */
+@tailwind base;
+
+/* ********************** */
+/* *** CSS Variables *** */
+/* ********************** */
+
+:root {
+  /* Measure */
+  --measure: theme("maxWidth.3xl");
+
+  /* Flow */
+  --flow-space: 1.5em;
+
+  /* Colors */
+  --color-bodybg: theme("colors.white");
+  --color-bodytext: theme("colors.cool-gray.700");
+  --color-muted: theme("colors.gray.50");
+  --color-primary: theme("colors.purple.700");
+  --color-secondary: theme("colors.pink.700");
+  --color-links: var(--color-primary);
+  --color-focus: var(--color-secondary);
+}
+
+/* ********************** */
+/*  Scoped CSS Variables  */
+/* ********************** */
+
+.dark-mode {
+  /* Colors */
+  --color-bodybg: theme("colors.cool-gray.900");
+  --color-bodytext: theme("colors.cool-gray.200");
+  --color-muted: theme("colors.cool-gray.800");
+  --color-primary: theme("colors.purple.300");
+  --color-secondary: theme("colors.pink.300");
+}
+
+/* *********************** */
+/* ***** Custom base ***** */
+/* *********************** */
+
+:root {
+  -webkit-overflow-scrolling: touch; /* Prevent scroll issues in iOS */
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+::selection {
+  @apply text-white bg-primary;
+}
+
+:focus,
+button:focus {
+  outline: 1px solid var(--color-focus);
+  outline-offset: 0.1rem;
+}
+:hover:focus {
+  outline: 0;
+}
+
+/* Default section with some padding */
+section {
+  @apply px-6 py-16;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  @apply font-bold leading-tight font-display;
+}
+h1 {
+  @apply text-5xl;
+}
+h2 {
+  @apply text-4xl;
+}
+h3 {
+  @apply text-3xl;
+}
+h4 {
+  @apply text-2xl;
+}
+@screen md {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-4xl;
+  }
+  h4 {
+    @apply text-3xl;
+  }
+}
+
+a:not([class]) {
+  text-decoration-line: underline;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: var(--color-links);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+a:not([class]):hover {
+  color: var(--color-links);
+}
+
+/* Content flow */
+.flow {
+  max-width: var(--measure);
+}
+.flow > * + * {
+  margin-top: 1.5em;
+  margin-top: var(--flow-space);
+}
+.flow > p + p {
+  --flow-space: 1em;
+}
+.flow > h1 + p,
+.flow > h2 + p,
+.flow > h3 + p,
+.flow > h4 + p {
+  --flow-space: 1.25em;
+}
+
+.measure {
+  max-width: var(--measure);
+}
+
+/* Extra Markdown styles (bold and italic are already set up in @tailwind base) */
+.markdown ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.markdown ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+/* Tailwind components */
+@tailwind components;
+
+/* Tailwind utilities */
+@tailwind utilities;
+
+/* ************************ */
+/* *** Custom utilities *** */
+/* ************************ */
+
+/* Animations */
+.fade-in-down {
+  animation: fadeInDown 0.7s ease both;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Color theme icons */
+.sun-icon {
+  display: none;
+}
+.dark-mode .sun-icon {
+  display: block;
+}
+.dark-mode .moon-icon {
+  display: none;
+}
+
+/* External links icon */
+a[rel~="external"]::after {
+  content: "↗";
+  font-family: system-ui, -apple-system, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: currentColor;
+  padding-left: 0.2em;
+  line-height: 0.75;
+  text-decoration-line: none;
+}
+
+/* Syntax Highlighting */
+/* https://github.com/PrismJS/prism-themes/blob/master/themes/prism-material-dark.css */
+/* With some little modifications */
+code[class*="language-"],
+pre[class*="language-"] {
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  color: #eee;
+  background: #2f2f2f;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+code[class*="language-"]::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+  background-color: theme(colors.primary);
+}
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"] ::selection {
+  background-color: theme(colors.primary);
+}
+:not(pre) > code[class*="language-"] {
+  white-space: normal;
+  border-radius: 0.2rem;
+  padding: 0.1rem;
+}
+pre[class*="language-"] {
+  overflow: auto;
+  position: relative;
+  padding: 2rem;
+}
+.language-css > code,
+.language-sass > code,
+.language-scss > code {
+  color: #fd9170;
+}
+[class*="language-"] .namespace {
+  opacity: 0.7;
+}
+.token.atrule {
+  color: #c792ea;
+}
+.token.attr-name {
+  color: #ffcb6b;
+}
+.token.attr-value {
+  color: #a5e844;
+}
+.token.attribute {
+  color: #a5e844;
+}
+.token.boolean {
+  color: #c792ea;
+}
+.token.builtin {
+  color: #ffcb6b;
+}
+.token.cdata {
+  color: #80cbc4;
+}
+.token.char {
+  color: #80cbc4;
+}
+.token.class {
+  color: #ffcb6b;
+}
+.token.class-name {
+  color: #f2ff00;
+}
+.token.comment {
+  color: #616161;
+}
+.token.constant {
+  color: #c792ea;
+}
+.token.deleted {
+  color: #ff6666;
+}
+.token.doctype {
+  color: #616161;
+}
+.token.entity {
+  color: #ff6666;
+}
+.token.function {
+  color: #c792ea;
+}
+.token.hexcode {
+  color: #f2ff00;
+}
+.token.id {
+  color: #c792ea;
+  font-weight: bold;
+}
+.token.important {
+  color: #c792ea;
+  font-weight: bold;
+}
+.token.inserted {
+  color: #80cbc4;
+}
+.token.keyword {
+  color: #c792ea;
+}
+.token.number {
+  color: #fd9170;
+}
+.token.operator {
+  color: #89ddff;
+}
+.token.prolog {
+  color: #616161;
+}
+.token.property {
+  color: #80cbc4;
+}
+.token.pseudo-class {
+  color: #a5e844;
+}
+.token.pseudo-element {
+  color: #a5e844;
+}
+.token.punctuation {
+  color: #89ddff;
+}
+.token.regex {
+  color: #f2ff00;
+}
+.token.selector {
+  color: #ff6666;
+}
+.token.string {
+  color: #a5e844;
+}
+.token.symbol {
+  color: #c792ea;
+}
+.token.tag {
+  color: #ff6666;
+}
+.token.unit {
+  color: #fd9170;
+}
+.token.url {
+  color: #ff6666;
+}
+.token.variable {
+  color: #ff6666;
+}
