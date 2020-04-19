@@ -1,5 +1,7 @@
 # MF Blog Starter
 
+[See Netlify Demo](https://mf-blogstarter.netlify.app/)
+
 The child of [eleventail](https://github.com/philhawksworth/eleventail) and [jamstack-web-starter](https://github.com/scottishstoater/jamstack-web-starter) raised by [Marc Filleul](https://www.artisanweb.dev/).
 
 This blog starter uses and is built with:
