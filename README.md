@@ -19,3 +19,13 @@ This blog starter uses and is built with:
 - CSS inlined and minified in production
 - Scripts optimised for production
 - Document `<head>` crafted using [htmlhead.dev](https://htmlhead.dev)
+
+## Performances
+
+[GTmetrix](https://gtmetrix.com/)
+
+![GTmetrix report](https://mf-blogstarter.netlify.app/assets/img/gtmetrix.png)
+
+[Google Measure](https://web.dev/measure/)
+
+![Lighthouse report](https://mf-blogstarter.netlify.app/assets/img/lighthouse.png)
