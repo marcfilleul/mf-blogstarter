@@ -7,10 +7,10 @@ layout: default
   <article class="mx-auto measure markdown">
     <time value="{{ date }}" class="text-sm text-gray-600">Last updated: {{ date | readableDate }}</time>
     <h1 class="mt-6">{{ title }}</h1>
-    <div class="mt-6 text-lg font-medium flow">
+    <div class="mt-6 text-2xl text-gray-500 flow">
       {{ teaser | safe }}
     </div>
-    <div class="mt-6 flow">
+    <div class="mt-8 flow">
       {{ content | safe }}
     </div>
   </article>
