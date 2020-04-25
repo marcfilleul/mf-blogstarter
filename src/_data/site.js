@@ -10,20 +10,20 @@ module.exports = {
   lang: "en", // for html tag
   title: "MF Blog Starter",
   description: "Eleventy + Tailwind CSS blog starter",
-  url: "https://mf-blogstarter.netlify.app", // Don't end with a slash /
+  url: "https://mf-blogstarter.netlify.app", // don't end with a slash /
   brandName: "MF", // for copyright and legal page
 
   author: {
-    name: "Marc Filleul", // For posts meta and Open Graph meta (FB and Twitter)
-    email: "marc@mfmail.fr",
-    github: "https://github.com/marcfilleul",
-    twitter: "https://twitter.com/marcfilleul",
+    name: "Marc Filleul", // for posts meta and Open Graph meta (FB and Twitter)
+    email: "marc@mfmail.fr", // used in legal page
+    github: "https://github.com/marcfilleul", // used in footer
+    twitter: "https://twitter.com/marcfilleul", // used in footer
   },
 
   meta_data: {
     theme_color: "#ffffff", // used in Chrome, Firefox OS and Opera
-    default_social_image: "/assets/img/featured_image.png", // For Open Graph meta
-    locale: "en_US", // For Open Graph meta
-    twitter_username: "@marcfilleul", // For Twitter Open Graph meta
+    default_social_image: "/assets/img/featured_image.png", // for Open Graph meta
+    locale: "en_US", // for Open Graph meta
+    twitter_username: "@marcfilleul", // for Twitter Open Graph meta
   },
 };
