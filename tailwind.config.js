@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  purge: false,
   theme: {
     // Replaces default settings or add new settings
     container: {
