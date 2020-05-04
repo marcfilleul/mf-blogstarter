@@ -23,11 +23,9 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@fullhuman/postcss-purgecss": "^1.3.0",
     "@tailwindcss/ui": "^0.1.2",
     "autoprefixer": "^9.7.2",
     "cross-env": "^7.0.0",
-    "cssnano": "^4.1.10",
     "del-cli": "^3.0.0",
     "html-minifier": "^4.0.0",
     "luxon": "^1.21.2",
