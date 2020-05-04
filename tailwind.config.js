@@ -1,7 +1,10 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: false,
+  purge: {
+    content: ["./dist/**/*.html"],
+    whitelist: ["dark-mode"],
+  },
   theme: {
     // Replaces default settings or add new settings
     container: {
