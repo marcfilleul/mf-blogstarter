@@ -20,6 +20,10 @@ This blog starter uses and is built with:
 - Scripts optimised for production
 - Document `<head>` crafted using [htmlhead.dev](https://htmlhead.dev)
 
+## Support
+
+If you want to thank me or support my work, you can [buy me a coffee](https://www.buymeacoffee.com/marcfilleul) 😉
+
 ## Performances
 
 [GTmetrix](https://gtmetrix.com/)
