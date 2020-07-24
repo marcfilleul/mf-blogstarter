@@ -1,3 +1,5 @@
+### As I don't have enough time to maintain this repo, I've decided to archive it.
+
 # MF Blog Starter
 
 [See Netlify Demo](https://mf-blogstarter.netlify.app/)
